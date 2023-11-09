@@ -1,0 +1,348 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11991,        340]
+NotebookOptionsPosition[     10542,        311]
+NotebookOutlinePosition[     10943,        327]
+CellTagsIndexPosition[     10900,        324]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Time-Reversal Symmetry", "Text",
+ CellChangeTimes->{{3.891888911925109*^9, 3.891888920595623*^9}, {
+  3.908529562744596*^9, 
+  3.9085295630929127`*^9}},ExpressionUUID->"7b8b64d4-a906-487a-b1b4-\
+b62cf547e603"],
+
+Cell["\<\
+Here I defined an \[OpenCurlyDoubleQuote]arbitrary\[CloseCurlyDoubleQuote] \
+Hamiltonian with the same structure as the example.\
+\>", "Text",
+ CellChangeTimes->{{3.908531237572168*^9, 
+  3.9085313022180276`*^9}},ExpressionUUID->"ec94668e-bfca-43cc-ac8a-\
+23af90bc0262"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["H", "t"], ":=", GridBox[{
+     {"\[Epsilon]s", "0", 
+      RowBox[{"a", "+", 
+       RowBox[{"I", " ", "b"}]}], 
+      RowBox[{
+       RowBox[{"-", "e"}], "+", 
+       RowBox[{"I", " ", "f"}]}]},
+     {"0", "\[Epsilon]s", 
+      RowBox[{"c", "+", 
+       RowBox[{"I", " ", "d"}]}], 
+      RowBox[{
+       RowBox[{"-", "g"}], "-", 
+       RowBox[{"I", " ", "h"}]}]},
+     {
+      RowBox[{"a", "-", 
+       RowBox[{"b", " ", "I"}]}], 
+      RowBox[{"c", "-", 
+       RowBox[{"I", " ", "d"}]}], "\[Epsilon]p", "0"},
+     {
+      RowBox[{
+       RowBox[{"-", "e"}], "-", 
+       RowBox[{"I", " ", "f"}]}], 
+      RowBox[{"g", "+", 
+       RowBox[{"I", " ", "h"}]}], "0", "\[Epsilon]p"}
+    }]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["\[Sigma]", "y"], ":=", GridBox[{
+    {"0", "0", 
+     RowBox[{"-", "I"}], "0"},
+    {"0", "0", "0", 
+     RowBox[{"-", "I"}]},
+    {"I", "0", "0", "0"},
+    {"0", "I", "0", "0"}
+   }]}]}], "Input",
+ CellChangeTimes->{{3.8918814872541924`*^9, 3.8918815594821167`*^9}, {
+  3.891881905209387*^9, 3.8918819136440725`*^9}, {3.908531553603736*^9, 
+  3.9085315720477023`*^9}},
+ CellLabel->"In[52]:=",ExpressionUUID->"066bc509-73c1-4a7d-8e44-70e4d9dfd7d4"],
+
+Cell[TextData[{
+ "Here, I compute ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[Association["boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[Sigma]", 
+          StyleBox["y", "TI"]], 
+         SuperscriptBox[
+          StyleBox["H", "TI"], "*"], 
+         SubscriptBox["\[Sigma]", 
+          StyleBox["y", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\sigma_y \\mathcal{H}^* \\sigma_y", "state" -> "Boxes"],
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "7ffa57df-4543-4c61-82fa-cc9c59e8842e"],
+ " , which yields a different Hamiltonian from the original."
+}], "Text",
+ CellChangeTimes->{{3.9085313249437757`*^9, 3.90853140125904*^9}, {
+  3.908531434843964*^9, 3.908531439612027*^9}, {3.9085316978146615`*^9, 
+  3.9085317181564407`*^9}},ExpressionUUID->"debd4463-6026-4b92-97cf-\
+a8bcaac12d3e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["ConjugateH", "t"], ":=", 
+   RowBox[{"Assuming", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
+        "h", ",", "\[Epsilon]s", ",", "\[Epsilon]p"}], "}"}], "\[Element]", 
+      "Reals"}], ",", 
+     RowBox[{"Simplify", "@", 
+      RowBox[{"Conjugate", "[", 
+       SubscriptBox["H", "t"], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Sigma]", "y"], ".", 
+   SubscriptBox["ConjugateH", "t"], ".", 
+   SubscriptBox["\[Sigma]", "y"]}], "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.8962922229003677`*^9, 3.896292243613827*^9}, {
+   3.8962922842456117`*^9, 3.896292293679494*^9}, {3.8962924054261413`*^9, 
+   3.896292406810182*^9}, {3.896345878197276*^9, 3.8963458796040154`*^9}, 
+   3.8963490517380896`*^9, {3.896349699127579*^9, 3.89634974048845*^9}, 
+   3.896350164611211*^9, {3.896350645184825*^9, 3.896350668195548*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"047b9cd3-7d62-480b-934d-483514e4e2e1"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"\[Epsilon]p", "0", 
+      RowBox[{
+       RowBox[{"-", "a"}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "b"}]}], 
+      RowBox[{
+       RowBox[{"-", "c"}], "-", 
+       RowBox[{"\[ImaginaryI]", " ", "d"}]}]},
+     {"0", "\[Epsilon]p", 
+      RowBox[{"e", "-", 
+       RowBox[{"\[ImaginaryI]", " ", "f"}]}], 
+      RowBox[{
+       RowBox[{"-", "g"}], "+", 
+       RowBox[{"\[ImaginaryI]", " ", "h"}]}]},
+     {
+      RowBox[{
+       RowBox[{"-", "a"}], "+", 
+       RowBox[{"\[ImaginaryI]", " ", "b"}]}], 
+      RowBox[{"e", "+", 
+       RowBox[{"\[ImaginaryI]", " ", "f"}]}], "\[Epsilon]s", "0"},
+     {
+      RowBox[{
+       RowBox[{"-", "c"}], "+", 
+       RowBox[{"\[ImaginaryI]", " ", "d"}]}], 
+      RowBox[{"g", "-", 
+       RowBox[{"\[ImaginaryI]", " ", "h"}]}], "0", "\[Epsilon]s"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.8962924078660355`*^9, {3.896349726335821*^9, 3.896349753431012*^9}, {
+   3.8963501659852333`*^9, 3.8963501797911873`*^9}, {3.896350646993586*^9, 
+   3.8963506688557577`*^9}, 3.896351236198217*^9, 3.908531576127952*^9},
+ CellLabel->
+  "Out[55]//MatrixForm=",ExpressionUUID->"ce9acc8b-dcd6-4f73-8abc-\
+f0ba242b9ac9"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Reader can ignore this part.",
+  FontColor->RGBColor[1, 0, 0]],
+ " This is another Hamiltonian respecting another Time-Reversal Symmetry \
+[taken from \
+https://physics.stackexchange.com/questions/221335/superconductivity-and-time-\
+reversal-symmetry]"
+}], "Text",
+ CellChangeTimes->{{3.908529553730913*^9, 3.908529568747429*^9}, {
+  3.908531457617139*^9, 
+  3.9085315370300517`*^9}},ExpressionUUID->"a2926dfd-e5e5-4e3a-88ec-\
+ffeff9ec3f22"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["H", "t2"], ":=", GridBox[{
+     {
+      RowBox[{"I", " ", "a"}], "0", "0", "\[CapitalDelta]"},
+     {"0", 
+      RowBox[{"I", " ", "a"}], 
+      RowBox[{"-", "\[CapitalDelta]"}], "0"},
+     {"0", 
+      RowBox[{"-", "\[CapitalDelta]"}], 
+      RowBox[{"I", " ", "a"}], "0"},
+     {"\[CapitalDelta]", "0", "0", 
+      RowBox[{"I", " ", "a"}]}
+    }]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["U", "T"], ":=", GridBox[{
+    {"0", "1", "0", "0"},
+    {
+     RowBox[{"-", "1"}], "0", "0", "0"},
+    {"0", "0", "0", "1"},
+    {"0", "0", 
+     RowBox[{"-", "1"}], "0"}
+   }]}]}], "Input",
+ CellChangeTimes->{{3.8918814872541924`*^9, 3.8918815594821167`*^9}, {
+   3.891881905209387*^9, 3.8918819136440725`*^9}, {3.9085295770280814`*^9, 
+   3.908529603137542*^9}, 3.9085296381841593`*^9, {3.908529740377779*^9, 
+   3.908529741597269*^9}, {3.908529806872998*^9, 3.9085298488044453`*^9}, {
+   3.908529884585815*^9, 3.908529919186057*^9}, {3.9085315817692018`*^9, 
+   3.9085315831762476`*^9}},ExpressionUUID->"552ea1e0-1135-4f12-83ef-\
+c85636380578"],
+
+Cell[TextData[{
+ "In this case, the Hamiltonian obeys the equation ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[Association["boxes" -> FormBox[
+       RowBox[{
+         StyleBox["H", "TI"], "\[LongEqual]", 
+         SubsuperscriptBox[
+          StyleBox["U", "TI"], 
+          StyleBox["T", "TI"], "\[Dagger]"], 
+         SuperscriptBox[
+          StyleBox["H", "TI"], "*"], 
+         SubscriptBox[
+          StyleBox["U", "TI"], 
+          StyleBox["T", "TI"]]}], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\mathcal{H} = U_T^\\dagger \\mathcal{H}^* U_T", "state" -> "Boxes"],
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "31edb8db-3b8d-43f5-9153-0ef1b6e2d29a"],
+ " ,"
+}], "Text",
+ CellChangeTimes->{{3.908531596607749*^9, 3.9085316804528837`*^9}, 
+   3.9085317604777*^9},ExpressionUUID->"6fd7ee57-71a3-4a64-9916-66fe7154882c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["ConjugateH", "t2"], ":=", 
+   RowBox[{"Assuming", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a", ",", "\[CapitalDelta]"}], "}"}], "\[Element]", "Reals"}], 
+     ",", 
+     RowBox[{"Simplify", "@", 
+      RowBox[{"Conjugate", "[", 
+       SubscriptBox["H", "t2"], "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ConjugateTranspose", "[", 
+    SubscriptBox["U", "T"], "]"}], ".", 
+   SubscriptBox["ConjugateH", "t2"], ".", 
+   SubscriptBox["U", "T"]}], "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.9085296861266966`*^9, 3.908529719799637*^9}, {
+   3.9085297663681107`*^9, 3.908529769917657*^9}, 3.9085299049144983`*^9},
+ CellLabel->"In[45]:=",ExpressionUUID->"471d4dce-c24a-4115-9abd-17baf593e8fe"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "a"}], "0", "0", 
+      "\[CapitalDelta]"},
+     {"0", 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "a"}], 
+      RowBox[{"-", "\[CapitalDelta]"}], "0"},
+     {"0", 
+      RowBox[{"-", "\[CapitalDelta]"}], 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "a"}], "0"},
+     {"\[CapitalDelta]", "0", "0", 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "a"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.9085297852112217`*^9, 3.9085297892242327`*^9}, {
+   3.908529821052058*^9, 3.9085298513263783`*^9}, 3.908529923493326*^9},
+ CellLabel->
+  "Out[46]//MatrixForm=",ExpressionUUID->"35140429-003f-4d89-bf3d-\
+111ac7772c43"]
+}, Open  ]],
+
+Cell["Again, I do not obtain the desired result.", "Text",
+ CellChangeTimes->{{3.908531868659284*^9, 
+  3.908531879252248*^9}},ExpressionUUID->"f185cfd5-c5e4-406d-ad4c-\
+cf6d3270abb5"]
+},
+WindowSize->{960, 472},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"80ac9d27-1587-42ae-a655-520bacb1f282"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 215, 4, 35, "Text",ExpressionUUID->"7b8b64d4-a906-487a-b1b4-b62cf547e603"],
+Cell[776, 26, 280, 6, 35, "Text",ExpressionUUID->"ec94668e-bfca-43cc-ac8a-23af90bc0262"],
+Cell[1059, 34, 1250, 40, 158, "Input",ExpressionUUID->"066bc509-73c1-4a7d-8e44-70e4d9dfd7d4"],
+Cell[2312, 76, 842, 20, 38, "Text",ExpressionUUID->"debd4463-6026-4b92-97cf-a8bcaac12d3e"],
+Cell[CellGroupData[{
+Cell[3179, 100, 1113, 26, 49, "Input",ExpressionUUID->"047b9cd3-7d62-480b-934d-483514e4e2e1"],
+Cell[4295, 128, 1586, 45, 94, "Output",ExpressionUUID->"ce9acc8b-dcd6-4f73-8abc-f0ba242b9ac9"]
+}, Open  ]],
+Cell[5896, 176, 468, 11, 58, "Text",ExpressionUUID->"a2926dfd-e5e5-4e3a-88ec-ffeff9ec3f22"],
+Cell[6367, 189, 1109, 30, 158, "Input",ExpressionUUID->"552ea1e0-1135-4f12-83ef-c85636380578"],
+Cell[7479, 221, 857, 21, 37, "Text",ExpressionUUID->"6fd7ee57-71a3-4a64-9916-66fe7154882c"],
+Cell[CellGroupData[{
+Cell[8361, 246, 824, 22, 48, "Input",ExpressionUUID->"471d4dce-c24a-4115-9abd-17baf593e8fe"],
+Cell[9188, 270, 1151, 33, 94, "Output",ExpressionUUID->"35140429-003f-4d89-bf3d-111ac7772c43"]
+}, Open  ]],
+Cell[10354, 306, 184, 3, 35, "Text",ExpressionUUID->"f185cfd5-c5e4-406d-ad4c-cf6d3270abb5"]
+}
+]
+*)
+
